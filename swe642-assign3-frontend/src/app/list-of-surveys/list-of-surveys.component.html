@@ -1,0 +1,60 @@
+<!-- 
+Group Members
+Chamundeshwari Kaparthi - G01382007
+Sriya Gade - G01386062 
+
+//This component displays all the surveys
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div style="padding-top: 10px;">
+        <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Street Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>ZIP</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th>Date of Survey</th>
+                <th>Liked Most</th>
+                <th>Interested By</th>
+                <th>Likelihood</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let s of surveysList">
+                <td>{{ s.id }}</td>
+                <td>{{ s.firstname }}</td>
+                <td>{{ s.lastname }}</td>
+                <td>{{ s.streetaddress }}</td>
+                <td>{{ s.city }}</td>
+                <td>{{ s.state }}</td>
+                <td>{{ s.zip }}</td>
+                <td>{{ s.telephone }}</td>
+                <td>{{ s.email }}</td>
+                <td>{{ s.dateofsurvey }}</td>
+                <td>{{ s.likedmost }}</td>
+                <td>{{ s.interestedby }}</td>
+                <td>{{ s.likelihood }}</td>
+                <td>{{ s.comments }}</td>
+              </tr>
+            </tbody>
+          </table>      
+    </div>
+    </div>
+</body>
+</html>

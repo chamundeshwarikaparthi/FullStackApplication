@@ -1,0 +1,30 @@
+/* 
+Group Members
+Chamundeshwari Kaparthi - G01382007
+Sriya Gade - G01386062  
+*/
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+thead {
+    background-color: #006633;
+    color: white;
+}
+
+body {
+    background-color: #FFCC33;
+    width: 100%;
+    height: 100vh;
+}

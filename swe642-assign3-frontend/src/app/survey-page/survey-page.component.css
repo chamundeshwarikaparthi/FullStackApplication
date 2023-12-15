@@ -1,0 +1,103 @@
+/* 
+Group Members
+Chamundeshwari Kaparthi - G01382007
+Sriya Gade - G01386062  
+*/
+
+.w3-black,
+.w3-hover-black:hover {
+    color: #fff !important;
+    background-color: #000 !important;
+}
+
+.w3-padding {
+    padding: 8px 16px !important;
+}
+
+.w3-top {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    z-index: 1;
+    height: 50px;
+    top: 0;
+
+}
+
+
+.w3-col.s3 {
+    width: 24.99999%;
+}
+
+.w3-col {
+    float: left;
+}
+
+.w3-top,
+.w3-bottom {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+
+}
+
+.required {
+    color: red;
+}
+
+h1 {
+    color: #006633;
+}
+
+.button {
+    text-align: center;
+}
+
+.data-container {
+    margin-top: 20px;
+}
+
+.bg-light {
+    height: 120px;
+    background-color: white;
+    margin-top: 50px;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 50px;
+}
+
+.navbar-light .navbar-brand {
+    color: #000;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-brand-box {
+    background-color: #FFCC33;
+    border: 5px solid #006633;
+    padding: 10px;
+    display: inline-block;
+    box-shadow: 5px 5px #2d8897;
+}
+
+.navbar-brand {
+    color: #fff;
+    /* Text color inside the box */
+    text-decoration: none;
+    /* Remove underlines */
+}

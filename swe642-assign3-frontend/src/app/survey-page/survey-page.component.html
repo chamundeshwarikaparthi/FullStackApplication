@@ -1,0 +1,244 @@
+<!-- 
+Group Members
+Chamundeshwari Kaparthi - G01382007
+Sriya Gade - G01386062 
+
+//This is the survey page of the application
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Department Survey</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include your custom CSS -->
+</head>
+
+<body>
+    <!-- Main Content -->
+    <div class="container">
+        <form id="myForm" autocomplete="on" [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="firstName">First Name<span class="required">*</span></label>
+                <input type="text" class="form-control" id="firstname" autocomplete="on" required
+                    placeholder="Enter your firstname" formControlName="firstname">
+                <div class="field-required"
+                    *ngIf="surveyForm.get('firstname')?.invalid && surveyForm.get('firstname')?.touched">
+                    {{ surveyForm.get('firstname')?.hasError('required') ? 'This field is required' : '' }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name<span class="required">*</span></label>
+                <input type="text" class="form-control" id="lastname" autocomplete="on" required
+                    placeholder="Enter your lastname" formControlName="lastname">
+                <div class="field-required"
+                    *ngIf="surveyForm.get('lastname')?.invalid && surveyForm.get('lastname')?.touched">
+                    {{ surveyForm.get('lastname')?.hasError('required') ? 'This field is required' : '' }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="street">Street Address<span class="required">*</span></label>
+                <input type="text" class="form-control" id="streetaddress" autocomplete="on"
+                    placeholder="Enter your street address" required
+                    formControlName="streetaddress">
+                <div class="field-required"
+                    *ngIf="surveyForm.get('streetaddress')?.invalid && surveyForm.get('streetaddress')?.touched">
+                    {{ surveyForm.get('streetaddress')?.hasError('required') ? 'This field is required' : '' }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="city">City<span class="required">*</span></label>
+                    <span id="city"></span>
+                    <input type="text" class="form-control" id="city" autocomplete="on" placeholder="Enter your city" required
+                        formControlName="city">
+                    <div class="field-required"
+                        *ngIf="surveyForm.get('city')?.invalid && surveyForm.get('city')?.touched">
+                        {{ surveyForm.get('city')?.hasError('required') ? 'This field is required' : '' }}
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="state">State<span class="required">*</span></label>
+                    <span id="state"></span>
+                    <input type="text" class="form-control" id="state" autocomplete="on" placeholder="Enter your state" required
+                        formControlName="state">
+                    <div class="field-required"
+                        *ngIf="surveyForm.get('state')?.invalid && surveyForm.get('state')?.touched">
+                        {{ surveyForm.get('state')?.hasError('required') ? 'This field is required' : '' }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Zipcode">*Zipcode:</label>
+                    <input type="text" class="form-control" id="zipcode" placeholder="22030" required 
+                        formControlName="zipcode">
+                    <div class="field-required"
+                        *ngIf="surveyForm.get('zipcode')?.invalid && surveyForm.get('zipcode')?.touched">
+                        {{ surveyForm.get('zipcode')?.hasError('required') ? 'This field is required' : '' }}
+                    </div>
+                    <span id="error-message" style="color: red;"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telephone">Telephone Number<span class="required">*</span></label>
+                <input type="tel" class="form-control" id="telephone" autocomplete="on" placeholder="0000000000"
+                    required formControlName="telephone">
+                <div class="field-required"
+                    *ngIf="surveyForm.get('telephone')?.invalid && surveyForm.get('telephone')?.touched">
+                    {{ surveyForm.get('telephone')?.hasError('required') ? 'This field is required' : '' }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email<span class="required">*</span></label>
+                <input type="email" class="form-control" id="email" autocomplete="on" placeholder="Enter your email"
+                    required formControlName="email">
+                <div class="field-required"
+                    *ngIf="surveyForm.get('email')?.invalid && surveyForm.get('email')?.touched">
+                    {{ surveyForm.get('email')?.hasError('required') ? 'This field is required' : '' }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="surveyDate">Date of Survey<span class="required">*</span></label>
+                <input type="date" class="form-control" id="dateofsurvey" required formControlName="dateofsurvey">
+                <div class="field-required"
+                    *ngIf="surveyForm.get('dateofsurvey')?.invalid && surveyForm.get('dateofsurvey')?.touched">
+                    {{ surveyForm.get('dateofsurvey')?.hasError('required') ? 'This field is required' : '' }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="likedMost">What did you like most about the campus?</label>
+                <div *ngFor="let option of likedmostoptions; let i=index" class="form-check">
+                    <label>
+                        <input class="form-check-input" type="checkbox" [value]="option.value" id="option.id"
+                            (change)="onCheckChange($event)">
+                        {{option.value}}
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>How did you become interested in the university?</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="interestfriends" name="interestedby"
+                        value="Friends" formControlName="interestedby">
+                    <label class="form-check-label" role="button" for="interestfriends">Friends</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="interesttv" name="interestedby" value="Television"
+                        formControlName="interestedby">
+                    <label class="form-check-label" role="button" for="interesttv">Television</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="interestinternet" name="interestedby"
+                        value="Internet" formControlName="interestedby">
+                    <label class="form-check-label" role="button" for="interestinternet">Internet</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="interestother" name="interestedby" value="Other"
+                        formControlName="interestedby">
+                    <label class="form-check-label" role="button" for="interestother">Other</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="likelihood">Likelihood of Recommending this School</label>
+                <select class="form-control" name="likelihood" id="likelihood" formControlName="likelihood">
+                    <option></option>
+                    <option>Very Likely</option>
+                    <option>Likely</option>
+                    <option>Unlikely</option>
+                </select>
+            </div>
+            <div class="form-group" style="padding-bottom: 35px;">
+                <label for="comments">Additional Comments</label>
+                <textarea class="form-control" id="comments" rows="4" formControlName="comments"></textarea>
+            </div>
+            <div class="button" style="padding-bottom: 0px;">
+                <button type="reset" class="btn btn-primary">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (if needed) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Set focus on the first input field -->
+    <script>
+        document.getElementById("username").focus();
+
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            if (validateForm()) {
+                alert("Form submitted successfully!");
+            }
+        });
+
+        function validateForm() {
+
+            let errorMsg = "";
+            let name = document.getElementById("name");
+            let streetAddress = document.getElementById("street-address");
+            let checkboxes = document.getElementsByName("Like");
+            let radioButtons = document.getElementsByName("Interest");
+            let email = document.getElementById("email");
+
+            // Name validation
+            if (!/^[a-zA-Z\s]*$/.test(name.value)) {
+                errorMsg += "Name should only contain alphabets.\n";
+                name.value = "";
+            }
+
+            // Address validation
+            if (!/^[0-9a-zA-Z\s,.]*$/.test(streetAddress.value)) {
+                errorMsg += "Address should contain only alphanumeric characters, spaces, commas, or periods.\n";
+                streetAddress.value = "";
+            }
+
+            // Checkbox validation
+            let checkedBoxes = 0;
+            for (let checkbox of checkboxes) {
+                if (checkbox.checked) {
+                    checkedBoxes++;
+                }
+            }
+            if (checkedBoxes < 2) {
+                errorMsg += "Please check at least two checkboxes.\n";
+            }
+
+            // Radio button validation
+            let radioButtonChecked = false;
+            for (let radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    radioButtonChecked = true;
+                    break;
+                }
+            }
+            if (!radioButtonChecked) {
+                errorMsg += "Please select a radio button option.\n";
+            }
+
+            // Email validation
+            if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)) {
+                errorMsg += "Please enter a valid email address.\n";
+                email.value = "";
+            }
+
+            if (errorMsg) {
+                alert(errorMsg);
+                return false;
+            }
+
+            return true;
+        }
+
+
+    </script>
+
+</body>
+</html>

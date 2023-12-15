@@ -1,0 +1,146 @@
+<!-- 
+Group Members
+Chamundeshwari Kaparthi - G01382007
+Sriya Gade - G01386062 
+
+//This is the home page of the application
+-->
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="index.html" class="w3-button w3-block w3-black">INTRO</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#menu" class="w3-button w3-block w3-black">PROGRAMS</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#where" class="w3-button w3-block w3-black">FEEDBACK</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <!--class="w3-display-middle w3-center"-->
+  <div class="w3-display-middle w3-center" style="background-color: #FFCC33;">
+    <h1>Computer Science Department</h1>
+    <span class="w3-text-white" style="font-size:30px"></span>
+  </div>
+
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+  <!-- About Container -->
+  <div class="w3-container" id="about">
+    <div class="w3-content" style="max-width:1300px">
+      <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE DEPARTMENT</span></h5>
+      <h4>
+        <p>The Computer Science Department at George Mason University is a dynamic and thriving academic unit known for
+          its commitment to excellence in education, research, and innovation</p>
+      </h4>
+      <h2>
+        <p>The department offers a comprehensive range of undergraduate and graduate programs, catering to students with
+          diverse interests and career goals.
+          Whether students aspire to become software engineers, cybersecurity experts, data scientists, or researchers,
+          the curriculum is designed to provide them with the necessary knowledge and skills to excel in their chosen
+          paths.</p>
+      </h2>
+      <h3>
+        <p>With state-of-the-art facilities, a commitment to diversity and inclusion, and a strong focus on real-world
+          applications, the Computer Science Department at George Mason University is at the forefront of shaping the
+          future of computer science education and research.</p>
+      </h3>
+      <img src="assets/csdept.jpg" style="width:50%;max-width:1300px;margin-left:18em" class="w3-margin-top"><br><br>
+    </div>
+  </div>
+
+
+  <!-- Menu Container -->
+  <div class="w3-container" id="menu">
+    <div class="w3-content" style="max-width:1300px">
+      <div id="degree">
+        <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">MASTER'S PROGRAMS</span></h5>
+        <ul>
+          <li>Master of Science in Computer Science</li>
+          <li>Master of Science in Software Engineering</li>
+          <li>Master of Science in Information Systems</li>
+        </ul>
+      </div>
+
+      <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">REQUIRED COURSES</span></h5>
+
+    </div>
+  </div>
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Degree Program</th>
+          <th>Course Number</th>
+          <th>Course Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MS in Computer Science</td>
+          <td>CS101</td>
+          <td>Introduction to Computer Science</td>
+        </tr>
+        <tr>
+          <td>MS in Software Engineering</td>
+          <td>SE201</td>
+          <td>Software Development Principles</td>
+        </tr>
+        <tr>
+          <td>MS in Information Systems</td>
+          <td>INFS622</td>
+          <td>Information Systems Analysis and Design</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Contact/Area Container -->
+  <div class="w3-container" id="where" style="padding-bottom:32px;">
+    <div class="w3-content" style="max-width:700px">
+      <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">FEEDBACK</span></h5>
+      <p>Give us a feedback about your visit to campus.</p>
+      <img src="assets/gmu.jpg" class="w3-image" style="width:100%"><br><br>
+      <a href="/survey" class="w3-button w3-black">Take Survey</a>
+      <a href="/surveysList" class="w3-button w3-black" style="margin-left: 20px;">Surveys List</a>
+      <!-- <form action="/survey" target="_blank">
+        <p><button class="w3-button w3-black" type="submit">TAKE SURVEY</button></p>
+      </form> -->
+    </div>
+  </div>
+
+  <!-- End page content -->
+</div>
+
+
+<script>
+  // Tabbed Menu
+  function openMenu(evt, menuName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+  }
+  document.getElementById("myLink").click();
+</script>

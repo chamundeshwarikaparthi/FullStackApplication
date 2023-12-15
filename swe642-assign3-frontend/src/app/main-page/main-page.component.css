@@ -1,0 +1,86 @@
+/* 
+Group Members
+Chamundeshwari Kaparthi - G01382007
+Sriya Gade - G01386062  
+*/
+
+
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+   
+  }
+  
+  h1{
+      color: #006633;
+  }
+  .w3-tag{
+      background-color: #006633;
+  }
+  .bgimg {
+    background-position: center;
+    background-size: cover;
+    
+    min-height: 25%;
+    
+  }
+  .w3-text-white, .w3-hover-text-white:hover, .w3-center {
+      color: #006633!important;
+  }
+  
+  .w3-display-middle{
+      background-color: #FFCC33;
+      box-shadow: 5px 5px green;
+  }
+  
+  #degree{
+      text-align: center;
+  }
+  
+  #degree ul {
+      list-style-position: inside; /* Place the list bullets inside the list items */
+      padding-left: 0; /* Remove default left padding from the list */
+  }
+  
+  #degree li {
+      text-align: center; /* Align list items to the left for readability */
+  }
+  
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+    margin-left: 10em;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .w3-center{
+      margin-top: 1.8em;
+  }
+  p {
+      text-align: center;
+  }
+  form p {
+      text-align: center;
+  }
+  .custom-style {
+          /* Define custom styles here */
+          font-weight: bold; /* Example: bold text */
+          text-transform: uppercase; /* Example: uppercase text */
+          /* Add more styles as needed */
+      }
+      .navbar-brand{
+              background-color: #FFCC33;
+              box-shadow: 5px 5px green;
+          }
+  .menu {
+    display: none;
+  }
